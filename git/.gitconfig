@@ -1,0 +1,59 @@
+[user]
+	name = Kai Waelti
+	email = kai.waelti@dfki.de
+	signingkey = 4CB722015D465CCE
+
+[github]
+	user = kw90
+
+[web]
+	browser = firefox
+
+[core]
+	editor = nvim
+	excludesfile = ~/.config/git/gitignore_global
+	attributesfile = ~/.config/git/gitattributes
+
+[commit]
+	verbose = true
+	gpgsign = true
+	template = ~/.config/git/git-commit-message-template
+
+[alias]
+	a = add
+	b = branch
+	co = checkout
+	c = commit
+	cl = clone
+	p = push
+	l = pull
+	rb = rebase
+	st = status
+	conflicts = diff --name-only --diff-filter=U
+
+[color]
+	ui = true
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+
+[diff]
+	tool = vimdiff
+	submodule = log
+
+[diff "pdf"]
+	binary = true
+	cachetextconv = true
+	textconv = diffpdf
+
