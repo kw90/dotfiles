@@ -9,6 +9,3 @@ uninstall:
 fmt:
 	@shfmt -l -w -ci -i 2 .
 
-test:
-@./tests.sh
-

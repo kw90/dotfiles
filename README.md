@@ -2,15 +2,18 @@ Repo of dotfiles to configure my system the way I like it.
 
 
 ## TODO
-+ _i3_
++ __i3__
 	+ i3 mappings
 	+ autostart to specific workspaces
-+ _polybar_
++ __polybar__
 	+ *top*
 		+ add i3 module showing workspaces
 		+ move pulseaudio wifi wth vpn battery temperature and date/time to top polybar
 	+ *bottom*
 		+ add player statuses and apps
-+ _installation_
++ __installation__
 	+ create easy install script
+
++ __walls__
+	+ create easy 500px pull random image from category script
 
