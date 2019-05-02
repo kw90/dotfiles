@@ -1,7 +1,7 @@
 [user]
 	name = Kai Waelti
-	email = kai.waelti@dfki.de
-	signingkey = 4CB722015D465CCE
+	email = kai.waelti@pm.me
+	signingkey = 46CEF17CF46A1169
 
 [github]
 	user = kw90
@@ -57,3 +57,5 @@
 	cachetextconv = true
 	textconv = diffpdf
 
+[merge]
+	tool = vimdiff

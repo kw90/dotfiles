@@ -27,16 +27,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-<<<<<<< HEAD
-bindsym $mod+Return exec kitty 
-#i3-sensible-terminal
-
-# start a terminal with tmux
-bindsym $mod+Shift+Return exec i3-sensible-terminal -e 'tmux'
-bindsym $mod+Shift+t exec terminology
-=======
 bindsym $mod+Return exec kitty #terminal
->>>>>>> 7da2423ad0b457ff475d731331a6a0f3dde3f4a9
 
 # kill focused window
 bindsym $mod+Shift+q kill
