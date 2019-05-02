@@ -41,7 +41,9 @@ bindsym $mod+Ctrl+m   exec i3-sensible-terminal -e "alsamixer"
 #bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Ctrl+x  --release exec --no-startup-id xkill
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty 
+#i3-sensible-terminal
+
 # start a terminal with tmux
 bindsym $mod+Shift+Return exec i3-sensible-terminal -e 'tmux'
 bindsym $mod+Shift+t exec terminology
