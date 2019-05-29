@@ -1,158 +1,373 @@
-[bar/i3wmthemer_bar]
+;==========================================================
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;==========================================================
+
+[colors]
+background = #7b000000
+foreground = #ECF1F3
+
+[bar/top]
+monitor = ${env:MONITOR:eDP1}
+width = 100%
+height = 34
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+;line-color = ${colors.background}
+;line-size = 16
+
+spacing = 2
+padding = 2 
+module-margin = 2
+
+font-0 = Hack:pixelsize=10;2
+font-1 = Font Awesome 5 Free:pixelsize=10;2
+font-2 = Font Awesome 5 Free Solid:pixelsize=10;2
+font-3 = Font Awesome 5 Brands:pixelsize=10;2
+font-4 = Twitter Color Emoji:pixelsize=14;2
+
+modules-left = powermenu
+modules-center = date
+modules-right = pulseaudio
+;pulseaudio backlight wireless-network wired-network battery date
+
+[bar/bottom]
+monitor = ${env:MONITOR:eDP1}
 bottom = true
 width = 100%
 height = 27
-radius = 0
-fixed-center = false
 
-background = #1d1e26
-foreground = #b0b287
+background = ${colors.background}
+foreground = ${colors.foreground}
 
-line-size = 3
-line-color =
+line-color = ${colors.background}
+line-size = 1
 
-border-size = 0
-border-color =
+spacing = 2
+padding = 4
+module-margin-left = 0
+module-margin-right = 4
 
-padding-left = 0
-padding-right = 2
+font-0 = Hack:pixelsize=10;2
+font-1 = Font Awesome 5 Free:pixelsize=10;2
+font-2 = Font Awesome 5 Free Solid:pixelsize=10;2
+font-3 = Font Awesome 5 Brands:pixelsize=10;2
+font-4 = Twitter Color Emoji:pixelsize=14;2
 
-module-margin-left = 1
-module-margin-right = 2
+modules-left = i3
+modules-center = spotify
+modules-right = cpu memory
 
-font-0 = "Source Code Pro Semibold:size=10;1"
-font-1 = "Font Awesome 5 Free:style=Solid:size=10;1"
-font-2 = "Font Awesome 5 Brands:size=10;1"
-
-modules-left = wlan eth
-modules-center = i3
-modules-right = date powermenu
-
-tray-position =
-;tray-padding =
-
-cursor-click = pointer
-cursor-scroll = ns-resize
+;; MODULES
+;;;;;;;;;;;
 
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = true
+
+; This will split the workspace name on ':'
+; Default: false
+strip-wsnumbers = true
+
+; Sort the workspaces by index instead of the default
+; sorting that groups the workspaces by output
+; Default: false
 index-sort = true
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = false
+
+; Wrap around when reaching the first/last workspace
+; Default: true
 wrapping-scroll = false
 
-label-mode-padding = 2
-label-mode-foreground = #1d1e26
-label-mode-background = #1d1e26
+; Set the scroll cycle direction
+; Default: true
+reverse-scroll = false
 
-label-focused = %index%
-label-focused-background = #789073
+; Use fuzzy (partial) matching on labels when assigning
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+
+; Available tokens:
+;   %mode%
+; Default: %mode%
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-background = #e60053
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-focused = %name%
 label-focused-foreground = #ffffff
 label-focused-padding = 2
 
-label-unfocused = %index%
-label-unfocused-background = #789073
-label-unfocused-foreground = #1d1e26
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-unfocused = %name%
+label-unfocused-foreground = #cccccccc
 label-unfocused-padding = 2
 
-label-visible = %index%
-label-visible-background = #789073
-label-visible-foreground = #1d1e26
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-visible = %name%
+label-visible-foreground = #cccccccc
 label-visible-padding = 2
 
-label-urgent = %index%
-label-urgent-background = #BA2922
-label-urgent-padding = 2
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-urgent = %index% %name%
+label-urgent-foreground = #ffffff
+label-urgent-background = #bd2c40
+label-urgent-padding = 4
 
-[module/wlan]
-type = internal/network
-interface = wlp3s0
-interval = 3.0
+; Separator in between workspaces
+;label-separator = |
 
-format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = #1d1e26
-format-connected-background = #789073
-format-connected-padding = 2
-label-connected = %essid%
 
-format-disconnected =
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label> <ramp-coreload>
+label = CPU
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = #1d1e26
-
-[module/eth]
-type = internal/network
-interface = docker0
-interval = 3.0
-
-format-connected-padding = 2
-format-connected-foreground = #1d1e26
-format-connected-background = #789073
-format-connected-prefix = " "
-format-connected-prefix-foreground = #1d1e26
-label-connected = %local_ip%
-
-format-disconnected =
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 2
+ramp-coreload-0-foreground = #aaff77
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 2
+ramp-coreload-1-foreground = #aaff77
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 2
+ramp-coreload-2-foreground = #aaff77
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 2
+ramp-coreload-3-foreground = #aaff77
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 2
+ramp-coreload-4-foreground = #fba922
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 2
+ramp-coreload-5-foreground = #fba922
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 2
+ramp-coreload-6-foreground = #ff5555
+ramp-coreload-7 = █
+ramp-coreload-7-font = 2
+ramp-coreload-7-foreground = #ff5555
 
 [module/date]
 type = internal/date
+date = %%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
+date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
+
+[module/memory]
+type = internal/memory
+format = <label> <bar-used>
+label = RAM
+
+bar-used-width = 30
+bar-used-foreground-0 = #aaff77
+bar-used-foreground-1 = #aaff77
+bar-used-foreground-2 = #fba922
+bar-used-foreground-3 = #ff5555
+bar-used-indicator = |
+bar-used-indicator-font = 6
+bar-used-indicator-foreground = #ff
+bar-used-fill = ─
+bar-used-fill-font = 6
+bar-used-empty = ─
+bar-used-empty-font = 6
+bar-used-empty-foreground = #444444
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = "%{T3}    "
+format = "  <label>  "
+;format = "%{T3}%{B#1db954}    %{T-}<label> :  %{B-}"
+;format = "%{T4}🕺 %{T-}<label> :  "
+;exec = python ~/.config/polybar/spotify_status.py -p ','
+exec = python ~/.config/polybar/spotify_status.py -f '{artist} :  {song}  {play_pause}' -t 62 -p ','
+;format-underline = #1db954
+format-overline = #1db954
+
+;[module/spotify_track]
+;type = custom/script
+;interval = 1
+;format = %{T-}<label>   %{T3}
+;format = %{T-}<label> %{T4}🎵
+;exec = bash ~/.config/polybar/spotify_track.sh
+;format-underline = #1db954
+;format-overline = #1db954
+;format-offset = -35
+
+[module/wlan]
+type = internal/network
+interface = net1
+interval = 3.0
+ping-interval = 10
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid%
+label-disconnected =    not connected
+label-disconnected-foreground = #66
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = ${bar/top.foreground}
+animation-packetloss-framerate = 500
+
+[module/eth]
+type = internal/network
+interface = enp5s3
+interval = 3.0
+ 
+;format-connected-underline = #55aa55
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+ 
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
 interval = 5
 
-date =
-date-alt = " %Y-%m-%d"
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-volume = <ramp-volume> <label-volume>
+format-volume-background = ${color.mb}
+;format-volume-padding = ${layout.module-padding}
 
-time = %H:%M
-time-alt = %H:%M:%S
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-muted = <label-muted>
+format-muted-prefix = 
+format-muted-background = ${color.mb}
 
-format-prefix = 
-format-foreground = #1d1e26
-format-background = #789073
-format-padding = 2
+; Available tokens:
+;   %percentage% (default)
+;label-volume = %percentage%%
 
-label = %date% %time%
+; Available tokens:
+;   %percentage% (default)
+label-muted = Muted
+label-muted-foreground = ${color.ac}
+label-muted-background = ${color.mb}
+;label-muted-padding = ${layout.module-padding}
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-volume-4 = 
 
 [module/powermenu]
 type = custom/menu
 
-expand-right = true
+format-padding = 5
 
-format-spacing = 1
+label-open = %{T3}
+label-close = %{T3}
 
-label-open = 
-label-open-foreground = #789073
-label-close =  cancel
-label-close-foreground = #789073
-label-separator = |
-label-separator-foreground = #789073
+menu-0-0 = "exit "
+menu-0-0-foreground = #1793D1
+menu-0-0-exec = bspc quit -1
+menu-0-1 = "reboot "
+menu-0-1-foreground = #1793D1
+menu-0-1-exec = menu_open-1
+menu-0-2 = "power-off "
+menu-0-2-foreground = #1793D1
+menu-0-2-exec = menu_open-2
 
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-menu-0-2 = log off
-menu-0-2-exec = menu-open-3
+menu-1-0 = Cancel
+menu-1-0-foreground = #fba922
+menu-1-0-exec = menu_open-0
+menu-1-1 = Reboot
+menu-1-1-foreground = #fba922
+menu-1-1-exec = sudo reboot
 
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = reboot
+menu-2-0 = Power off
+menu-2-0-foreground = #fba922
+menu-2-0-exec = sudo poweroff
+menu-2-1 = Cancel
+menu-2-1-foreground = #fba922
+menu-2-1-exec = menu_open-0
 
-menu-2-0 = power off
-menu-2-0-exec = poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+[module/clock]
+type = internal/date
+interval = 2
+date = %%{F#999}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
 
-menu-3-0 = log off
-menu-3-0-exec = pkill -KILL -u $USER
-menu-3-1 = cancel
-menu-3-1-exec = menu-open-0
-
-[settings]
-screenchange-reload = true
-
-[global/wm]
-margin-top = 0
-margin-bottom = 0

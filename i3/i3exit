@@ -1,6 +1,6 @@
 #!/bin/sh
 lock() {
-    i3lock
+    betterlockscreen --lock dimblur
 }
 
 case "$1" in
