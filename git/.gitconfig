@@ -57,3 +57,5 @@
 	cachetextconv = true
 	textconv = diffpdf
 
+[merge]
+	tool = vimdiff
