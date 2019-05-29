@@ -14,24 +14,24 @@ TODO how-to install deps, packages and setup symlinks.
 
 + __polybar__
  + *top*
-  + move pulseaudio wifi wth vpn battery temperature and date/time to top polybar
+   + move pulseaudio wifi wth vpn battery temperature and date/time to top polybar
  + *bottom*
-  + add player statuses
+   + add player statuses
 
 + __oh-my-zsh__
- + add setup and config
- + Spaceship ZSH
+  + add setup and config
+  + Spaceship ZSH
 
 + __neovim__
- + add nvim configs and plugins
- + based on https://github.com/rafi/vim-config
+  + add nvim configs and plugins
+  + based on https://github.com/rafi/vim-config
 
 + __kiTTY__
- + add kiTTY config and kittens
+  + add kiTTY config and kittens
 
 + __installation__
- + create easy install script
+  + create easy install script
 
 + __walls__
- + create easy 500px pull random image from category script
+  + create easy 500px pull random image from category script
 
