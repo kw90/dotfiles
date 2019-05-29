@@ -3,8 +3,9 @@
 . ../helpers.sh
 
 curr_wd=$(pwd)
-echo_info "Sym. linking git config file from $curr_wd to ~/.config/kitty"
+echo_info "Sym. linking kitty config file from $curr_wd to ~/.config/kitty"
 
+mkdir -p ~/.config/kitty
 ln -sfT ~/source/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
 ln -sfT ~/source/dotfiles/kitty/kitty.session ~/.config/kitty/kitty.session
 
