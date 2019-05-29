@@ -3,7 +3,7 @@ filetype plugin indent on
 
 " activates syntax highlighting among other things
 syntax on
-colorscheme murphy
+colorscheme gotham
 
 " allows you to deal with multiple unsaved
 " buffers simultaneously without resorting
