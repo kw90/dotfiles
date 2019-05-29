@@ -442,7 +442,7 @@ mode "$mode_gaps_outer" {
 
 # Autostart applications
 # exec --no-startup-id albert
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id nitrogen --restore; sleep 1; compton -b --config="/home/kw/.config/compton/compton.conf"
 exec --no-startup-id nm-applet
 #exec --no-startup-id redshift -l 41:-8 -t 5700:3600
 #exec --no-startup-id volumeicon
@@ -485,4 +485,5 @@ client.unfocused #b0b287 #1d1e26 #b0b287 #789073 #789073
 client.urgent #b0b287 #1d1e26 #b0b287 #789073 #789073
 client.placeholder #b0b287 #1d1e26 #b0b287 #789073 #789073
 client.background #1d1e26
+
 
