@@ -59,8 +59,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Escape exec --no-startup-id betterlockscreen -l dim
 
 # start program launcher
-bindsym $mod+Shift+d exec --no-startup-id rofi -show combi
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+Shift+d exec --no-startup-id rofi -show combi -theme solarized-darker
+bindsym $mod+d exec --no-startup-id rofi -show run -theme solarized-darker
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # launch categorized menu
