@@ -321,7 +321,7 @@ exec --no-startup-id i3-msg 'workspace 5:  Entertainment; exec spotify'
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id xautolock -time 10 -locker betterlockscreen -l dim
-exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
+exec_always --no-startup-id ~/.config/polybar/launch-polybar.sh
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:

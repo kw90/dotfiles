@@ -433,3 +433,6 @@ bindsym --release $mod+Control+t exec --no-startup-id "transset-df 1"
 bindsym $mod+Shift+y exec "transset-df -a 2 -x 2"; fullscreen disable; floating enable; resize set 640 360; sticky enable; move window to position 1270 800
 ## undo that
 bindsym $mod+Shift+z fullscreen disable; floating disable; sticky disable
+
+# screenshot
+bindsym $mod+Ctrl+s exec --no-startup-id deepin-screenshot -d 5 -f
