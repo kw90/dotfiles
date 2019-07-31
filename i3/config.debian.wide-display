@@ -213,10 +213,10 @@ bindsym $mod+Shift+9 move container to workspace $ws9;  workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 
 # Open applications on specific workspaces
-assign [class="Thunderbird"]     $ws5
-assign [class="Pidgin"]          $ws4
-assign [class="Spotify"]         $ws4
-assign [class="Rhythmbox"]       $ws4
+assign [class="Thunderbird"]     $ws6
+assign [class="Pidgin"]          $ws5
+assign [class="Spotify"]         $ws5
+assign [class="Rhythmbox"]       $ws5
 
 for_window [class="Spotify"] move to workspace $ws4
 
