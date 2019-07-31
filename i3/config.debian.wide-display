@@ -169,11 +169,12 @@ bindsym $mod+Ctrl+Left workspace prev
 set $ws1   "1:  Browsing"
 set $ws2   "2:  Code"
 set $ws3   "3:  Build"
-set $ws4   "4:  Messaging"
-set $ws5   "5:  Mail"
-set $ws6 6
+set $ws4   "4: 🚀 Compose"
+set $ws5   "4:  Messaging"
+set $ws6   "5:  Mail"
 set $ws7 7
 set $ws8 8
+set $ws9 9
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
