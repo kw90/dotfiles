@@ -144,11 +144,11 @@ bindsym $mod+Ctrl+Left workspace prev
 #                 set $ws2 2: 
 set $ws1   "1:  Code"
 set $ws2   "2:  Build"
-set $ws3   "3: 🚀 Compose"
+set $ws3   "3:  Compose"
 
 set $ws4   "4:  Browsing"
 set $ws5   "5:  Messaging"
-set $ws6   "6:  Entertainment"
+set $ws6   "6: ⚡ Entertainment"
 set $ws7   "7:  Mail"
 set $ws8 8
 
@@ -194,9 +194,12 @@ workspace 7 output DVI-D-0
 
 # Open applications on specific workspaces
 # assign [class="Firefox"] $ws1
-assign [class="Pidgin"] $ws5
-assign [class="Thunderbird"] $ws7
-assign [class="Spotify"] $ws6
+assign [class="Pidgin"] → $ws5
+assign [class="Thunderbird"] → $ws7
+# Workaround for spotify, which doesn’t set class hints
+for_window [class="Spotify"] move to workspace $ws6
+# for_window [class="Discord"] move to workspace $ws6
+assign [class="discord"] → $ws6
 # assign [class="Pale moon"] $ws2
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
@@ -315,9 +318,9 @@ exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 exec --no-startup-id conky --config ~/.config/conky/.conky.conf
-exec --no-startup-id i3-msg 'workspace 4:  Messaging; exec discord'
-exec --no-startup-id i3-msg 'workspace 4:  Messaging; exec pidgin'
-exec --no-startup-id i3-msg 'workspace 5:  Entertainment; exec spotify'
+exec --no-startup-id i3-msg discord
+exec --no-startup-id i3-msg pidgin
+exec --no-startup-id i3-msg spotify
 # exec --no-startup-id start_conky_green
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
@@ -435,3 +438,5 @@ bindsym --release $mod+Control+t exec --no-startup-id "transset-df 1"
 bindsym $mod+Shift+y exec "transset-df -a 2 -x 2"; fullscreen disable; floating enable; resize set 640 360; sticky enable; move window to position 1270 800
 ## undo that
 bindsym $mod+Shift+z fullscreen disable; floating disable; sticky disable
+
+bindsym $mod+Control+s exec --no-startup-id "flameshot gui"
