@@ -298,7 +298,7 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id betterlockscreen --lock dim --text "Get inspired from everywhere."
+bindsym $mod+Escape exec --no-startup-id betterlockscreen --lock dim --text "Get inspired from everywhere."
 
 # Autostart applications
 #set $ws1   "1:  Code"
