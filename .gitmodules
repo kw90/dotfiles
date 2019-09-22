@@ -1,3 +1,6 @@
 [submodule "vim"]
 	path = vim
 	url = git@github.com:kw90/vim-config.git
+[submodule "i3/i3lock-color"]
+	path = i3/i3lock-color
+	url = https://github.com/PandorasFox/i3lock-color
