@@ -4,3 +4,6 @@
 [submodule "i3/i3lock-color"]
 	path = i3/i3lock-color
 	url = https://github.com/PandorasFox/i3lock-color
+[submodule "polybar/polybar-themes"]
+	path = polybar/polybar-themes
+	url = https://github.com/adi1090x/polybar-themes.git
