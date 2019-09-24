@@ -7,3 +7,6 @@
 [submodule "vim"]
 	path = vim
 	url = git@github.com:kw90/vim-config.git
+[submodule "Bulksplash"]
+	path = Bulksplash
+	url = git@github.com:MehediH/Bulksplash.git
