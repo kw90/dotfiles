@@ -1,0 +1,36 @@
+# Custom Aliases
+
+alias vim="nvim"
+alias cat="ccat"
+alias less="cless"
+eval "$(thefuck --alias)"
+export VISUAL=nvim
+
+docker-xauth(){
+        XSOCK=/tmp/.X11-unix
+        XAUTH=/tmp/.docker.xauth
+        if [[ -f "$XAUTH" ]]; then
+                sudo rm -r $XAUTH
+        fi
+        touch $XAUTH
+        xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
+}
+
+vpn-sbcc(){
+        expect -c '
+        spawn sudo openvpn --config /home/kw/Dokumente/Rotterdam-elf.ovpn --daemon
+        send_user "password?\ "
+        stty -echo
+        expect_user -re "(.*)\n"
+        stty echo
+        set password $expect_out(1,string)
+        send $password
+        send "\n"
+        expect "Enter Auth Username:"
+        send "kw90\n"
+        expect "Enter Auth Password:"
+        send $env(PASSWORD_SBCC)
+        send "\n"
+        interact
+        '
+}
