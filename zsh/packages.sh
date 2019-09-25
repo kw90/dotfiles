@@ -13,7 +13,7 @@ echo_done "Emojis successfully applied 🚀"
 
 echo_info "Installing zsh related deps"
 
-pip3 install thefuck
+pip3 install thefuck grip
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 git clone https://github.com/bobthecow/git-flow-completion ~/.oh-my-zsh/custom/plugins/git-flow-completion
