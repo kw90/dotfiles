@@ -30,6 +30,7 @@
 	po = push origin
 	pom = push origin master
 	l = pull
+	plom = pull origin master
 	rb = rebase
 	st = status
 	conflicts = diff --name-only --diff-filter=U
