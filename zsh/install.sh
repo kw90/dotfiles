@@ -12,7 +12,9 @@ git clone https://github.com/denysdovhan/spaceship-prompt.git "/home/kw/.oh-my-z
 
 ln -s "/home/kw/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme" "/home/kw/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
 rm ~/.zshrc
-ln -s ~/source/dotfiles/zsh/.zshrc ~/.zshrc
+rm ~/.aliases
+ln -s ~/source/dotfiles/zsh/zshrc ~/.zshrc
+ln -s ~/source/dotfiles/zsh/aliases ~/.aliases
 
 . ./packages.sh
 
