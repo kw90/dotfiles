@@ -1,7 +1,7 @@
 [user]
 	name = Kai Waelti
-	email = kai.waelti@pm.me
-	signingkey = 46CEF17CF46A1169
+	email = kai.waelti@dfki.de
+	signingkey = 4CB722015D465CCE
 
 [github]
 	user = kw90
@@ -24,7 +24,10 @@
 	b = branch
 	co = checkout
 	c = commit
-	csecm = commit -S -m
+	csm = commit -S -m
+	pom = push origin master
+	po = push origin
+	plom = pull origin master
 	cl = clone
 	p = push
 	l = pull
