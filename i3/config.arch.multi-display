@@ -144,13 +144,13 @@ bindsym $mod+Ctrl+Left workspace prev
 #                 set $ws2 2: 
 set $ws1   "1:  Code"
 set $ws2   "2:  Build"
-set $ws3   "3:  Compose"
+set $ws3   "3: 🥅 Kanban"
 
-set $ws4   "4:  Browsing"
-set $ws5   "5:  Messaging"
-set $ws6   "6: ⚡ Entertainment"
-set $ws7   "7:  Mail"
-set $ws8   "8: 🥅 Kanban"
+set $ws4   "4:  Compose"
+set $ws5   "5:  Browsing"
+set $ws6   "6:  Messaging"
+set $ws7   "7: ⚡ Entertainment"
+set $ws8   "8:  Mail"
 set $ws9 9
 
 # switch to workspace
@@ -198,16 +198,16 @@ workspace 8 output DVI-D-0
 
 # Open applications on specific workspaces
 # assign [class="Firefox"] $ws1
-assign [class="Pidgin"] → $ws5
-assign [class="Thunderbird"] → $ws7
+assign [class="Pidgin"] → $ws6
+assign [class="Thunderbird"] → $ws8
 # Workaround for spotify, which doesn’t set class hints
-for_window [class="Spotify"] move to workspace $ws6
+for_window [class="Spotify"] move to workspace $ws7
 # for_window [class="Discord"] move to workspace $ws6
 assign [class="discord"] → $ws6
 # assign [class="Pale moon"] $ws2
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
-assign [class="Trello"] → $ws8
+assign [class="Trello"] → $ws3
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -359,7 +359,8 @@ set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
 # hide/unhide i3status bar
-bindsym $mod+m bar mode toggle
+# bindsym $mod+m bar mode toggle
+bindsym $mod+m move workspace to output left
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
