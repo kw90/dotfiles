@@ -51,7 +51,7 @@ bindsym $mod+Shift+q kill
 # start program launcher
 # rofi -show combi -bg "#222222" -fg "#2ECC71" -hlbg "#445544" -hlfg "#2EEE71" -bw 4 -eh 1 -font "Roboto Slab 18" -opacity "80" -lines 8 -line-margin 4 -width 100 -padding 160 -terminal kitty
 #bindsym $mod+d exec --no-startup-id dmenu_recency
-bindsym $mod+d exec --no-startup-id rofi -show combi -theme solarized-darker
+bindsym $mod+d exec --no-startup-id rofi -show combi -theme slate #solarized-darker
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
