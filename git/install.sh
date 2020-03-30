@@ -5,7 +5,7 @@
 curr_wd=$(pwd)
 echo_info "Sym. linking git config file from $curr_wd to ~/.config/git"
 
-ln -sfT ~/source/dotfiles/git/.gitconfig ~/.gitconfig
+ln -sfT ~/source/dotfiles/git/gitconfig ~/.gitconfig
 mkdir -p ~/.config/git
 ln -sfT ~/source/dotfiles/git/gitignore_global ~/.config/git/gitignore_global
 ln -sfT ~/source/dotfiles/git/gitattributes ~/.config/git/gitattributes

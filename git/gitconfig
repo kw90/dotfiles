@@ -1,6 +1,6 @@
 [user]
+	email = kai.waelti@pm.me
 	name = Kai Waelti
-	email = Kai.Waelti@dfki.de
 	signingkey = B301549A4B794F4C
 
 [github]
@@ -24,10 +24,13 @@
 	b = branch
 	co = checkout
 	c = commit
-	csecm = commit -S -m
+	csm = commit -S -m
 	cl = clone
 	p = push
+	po = push origin
+	pom = push origin master
 	l = pull
+	plom = pull origin master
 	rb = rebase
 	st = status
 	conflicts = diff --name-only --diff-filter=U
@@ -60,3 +63,8 @@
 
 [merge]
 	tool = vimdiff
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
