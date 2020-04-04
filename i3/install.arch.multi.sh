@@ -13,5 +13,7 @@ mkdir -p ~/.i3
 ln -sfT ~/source/dotfiles/i3/config.arch.multi-display ~/.i3/config
 ln -sfT ~/source/dotfiles/i3/i3exit ~/.i3/i3exit
 
+xrandr --output DP-1 --primary --left-of DVI-D-0
+
 echo_done "i3 config applied!"
 

@@ -1,12 +1,16 @@
-# Setup Dotfiles
+# Setup `.`-files
 
-TODO how-to install deps, packages and setup symlinks.
+Each sub-folder contains configurations for important applications. They can be
+installed separately or combined using installation scripts provided
+`install.sh` in the respective folder scope. This install scripts should install
+all required dependencies, packages and setup symlinks. This is a Arch specific
+setup.
 
 # Featured Configurations
 - i3
 - polybar
 - compton
-- neovim
+- (neo)vim
 - kiTTY
 - git
 
@@ -15,22 +19,13 @@ TODO how-to install deps, packages and setup symlinks.
 + __polybar__
  + *top*
    + move pulseaudio wifi wth vpn battery temperature and date/time to top polybar
- + *bottom*
-   + add player statuses
 
 + __oh-my-zsh__
   + add setup and config
   + Spaceship ZSH
 
-+ __neovim__
-  + add nvim configs and plugins
-  + based on https://github.com/rafi/vim-config
-
-+ __kiTTY__
-  + add kiTTY config and kittens
-
 + __installation__
-  + create easy install script
+  + create remaining easy install scripts
 
 + __walls__
   + create easy 500px pull random image from category script

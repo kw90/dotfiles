@@ -60,7 +60,7 @@ export AUR=(
   # screenkey
   # slack-desktop
   spotify
-  # trello #
-  # watchexec
+  trello-git
+  watchexec
   # z-dir-jump-git
 )
