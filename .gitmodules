@@ -1,3 +1,12 @@
+[submodule "i3/i3lock-color"]
+	path = i3/i3lock-color
+	url = https://github.com/PandorasFox/i3lock-color
+[submodule "polybar/polybar-themes"]
+	path = polybar/polybar-themes
+	url = https://github.com/adi1090x/polybar-themes.git
 [submodule "vim"]
 	path = vim
 	url = git@github.com:kw90/vim-config.git
+[submodule "Bulksplash"]
+	path = Bulksplash
+	url = git@github.com:MehediH/Bulksplash.git

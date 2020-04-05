@@ -27,10 +27,10 @@
 	csm = commit -S -m
 	pom = push origin master
 	po = push origin
-	plom = pull origin master
 	cl = clone
 	p = push
 	l = pull
+	plom = pull origin master
 	rb = rebase
 	st = status
 	conflicts = diff --name-only --diff-filter=U
@@ -63,3 +63,9 @@
 
 [merge]
 	tool = vimdiff
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
