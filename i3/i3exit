@@ -2,7 +2,7 @@
 
 case "$1" in
     lock)
-        betterlockscreen --lock dim --text "Get inspired from everywhere."
+        betterlockscreen -l dim
         ;;
     logout)
         i3-msg exit

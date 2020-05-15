@@ -56,6 +56,9 @@ bindsym $mod+d exec --no-startup-id rofi -show combi -theme slate #solarized-dar
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
+# Lock Screen
+bindsym $mod+Escape exec betterlockscreen -l dim
+
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
@@ -202,6 +205,7 @@ assign [class="Pidgin"] → $ws6
 assign [class="Thunderbird"] → $ws8
 # Workaround for spotify, which doesn’t set class hints
 for_window [class="Spotify"] move to workspace $ws7
+assign [class="Spotify"] → $ws7
 # for_window [class="Discord"] move to workspace $ws6
 assign [class="discord"] → $ws6
 # assign [class="Pale moon"] $ws2
@@ -302,12 +306,14 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# Lock screen
-bindsym $mod+Escape exec --no-startup-id betterlockscreen --lock dim --text "Get inspired from everywhere."
-
 # Autostart applications
+
+## Background and Lockscreen
+# exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id feh --randomize --bg-fill ~/mega/Wallpapers/mac_workspaces/1; sleep 1; compton -b
+bindsym --no-startup-id betterlockscreen --resolution 1920x1200 --blur 0.1 --wall dimblur
+
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 #exec --no-startup-id manjaro-hello
 #exec --no-startup-id nm-applet
 # exec --no-startup-id xfce4-power-manager
@@ -428,6 +434,7 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
 
 # compton mappings
 bindsym --release $mod+Control+o exec --no-startup-id "transset-df 2 -x 2"
