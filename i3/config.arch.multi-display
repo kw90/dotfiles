@@ -75,9 +75,15 @@ exec --no-startup-id volumeicon
 
 ################################################################################################
 
-# Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+# Pulse Audio and Media controls
+bindsym XF86AudioPlay exec --no-startup-id mocp --toggle-pause & playerctl --all-players play-pause
+bindsym XF86AudioStop exec --no-startup-id mocp --stop & playerctl --all-players stop
+bindsym XF86AudioNext exec --no-startup-id mocp --next & playerctl --all-players next
+bindsym XF86AudioPrev exec --no-startup-id mocp --previous & playerctl --all-players previous
+bindsym $mod+Ctrl+KP_Add exec --no-startup-id pactl set-sink-volume 1 +5% # increase output volume
+bindsym $mod+Ctrl+KP_Subtract exec --no-startup-id pactl set-sink-volume 1 -5% # increase output volume
+bindsym $mod+Ctrl+KP_Enter exec --no-startup-id pactl set-sink-mute 1 toggle
+
 
 # focus_follows_mouse no
 
