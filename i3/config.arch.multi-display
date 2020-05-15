@@ -29,13 +29,18 @@ floating_modifier $mod
 # Applications
 bindsym $mod+Shift+e  exec mousepad
 bindsym $mod+Shift+i  exec manjaro-settings-manager
+bindsym $mod+Shift+b  exec i3-sensible-terminal
 bindsym $mod+Shift+f  exec exo-open --launch FileManager
-bindsym $mod+F1       exec firefox
-bindsym $mod+F2       exec thunderbird
+bindsym $mod+F1       exec firefox-nightly
+bindsym $mod+F2       exec "protonmail-bridge --no-window & thunderbird"
 bindsym $mod+F3       exec pidgin
-bindsym $mod+F4       exec ranger
+# start HTOP
+bindsym $mod+F4       exec tilda --config-file ~/.config/tilda/config_0
+# start MOCP
+bindsym $mod+F5       exec tilda --config-file ~/.config/tilda/config_1
+# start NCPAMixer
+bindsym $mod+Ctrl+m       exec tilda --config-file ~/.config/tilda/config_2
 bindsym $mod+Ctrl+t   exec compton -b --config ~/.config/compton/compton.conf
-bindsym $mod+Ctrl+m   exec terminal -e "alsamixer"
 bindsym $mod+Ctrl+x  --release exec --no-startup-id xkill
 # start a terminal
 bindsym $mod+Return exec kitty
@@ -145,15 +150,15 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2: 
-set $ws1   "1:  Code"
-set $ws2   "2:  Build"
-set $ws3   "3: 🥅 Kanban"
+set $ws1   1: Code
+set $ws2   2: Build
+set $ws3   3:🥅 Kanban
 
-set $ws4   "4:  Compose"
-set $ws5   "5:  Browsing"
-set $ws6   "6:  Messaging"
-set $ws7   "7: ⚡ Entertainment"
-set $ws8   "8:  Mail"
+set $ws4   4: Compose
+set $ws5   5: Browsing
+set $ws6   6: Messaging
+set $ws7   7:⚡ Entertainment
+set $ws8   8: Mail
 set $ws9 9
 
 # switch to workspace
@@ -447,3 +452,4 @@ bindsym $mod+Shift+y exec "transset-df -a 2 -x 2"; fullscreen disable; floating 
 bindsym $mod+Shift+z fullscreen disable; floating disable; sticky disable
 
 bindsym $mod+Control+s exec --no-startup-id "flameshot gui"
+

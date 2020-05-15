@@ -120,7 +120,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-kitty + complete setup zsh | source /dev/stdin
 source $HOME/.aliases
 
 SPACESHIP_VI_MODE_SHOW=false
@@ -147,5 +146,4 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-
-
+kitty + complete setup zsh | source /dev/stdin
