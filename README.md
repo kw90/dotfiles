@@ -6,13 +6,19 @@ installed separately or combined using installation scripts provided
 all required dependencies, packages and setup symlinks. This is a Arch specific
 setup.
 
-# Featured Configurations
+# Featured Installations and Configurations
+
+|   |   |
+|   |   |
+|   |   |
+|   |   |
 - i3
 - polybar
 - compton
-- (neo)vim
+- Neovim
 - kiTTY
 - git
+
 
 ## TODO
 
