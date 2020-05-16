@@ -2,7 +2,7 @@
 
 Each sub-folder contains configurations for important applications. They can be
 installed separately or combined using installation scripts provided
-`install.arch.sh` or `install.debian.sh` in the respective folder scope. This
+`install.arch.sh` or `install.debian.sh` in the respective folder scope. These
 install scripts should install all required dependencies, packages and setup
 the symlinks.
 
