@@ -9,6 +9,7 @@ the symlinks.
 ## Screens
 
 ![Monitor 1](./screenshots/Screen1.png)
+![Monitor 2](./screenshots/Screen2.png)
 
 ## Featured Installations and Configurations
 
@@ -29,13 +30,18 @@ the symlinks.
 - **PDF**: `zathura`
 - **Version control**: `git`
 - **Lockscreen**: `betterlockscreen`
+- **GTK L&F**
+  - Widget: Matcha-dark-azul
+  - Icons: Papirus-Dark
+  - Cursor: Bibata Ice
+  - Font: Noto Sans 10pt
 - **Default apps association**: `mimeo`
 
 ## Open Points
 
 - Polybar
-  - move pulseaudio wifi wth vpn battery temperature and date/time to top polybar
+  - add wifi, vpn, battery temperature to top polybar
 - Installation
-  - create easy install scripts
+  - create remaining easy install scripts
 - walls
   - create easy 500px pull random image from category script
