@@ -8,11 +8,15 @@ set $mod Mod4
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 1
-new_float normal
+new_window 1pixel
+new_float none
 
-# Hide borders
-hide_edge_borders none
+# Hide borders <none|vertical|horizontal|both|smart>
+
+hide_edge_borders vertical
+
+# Rounded borders
+border_radius 10
 
 # change borders
 bindsym $mod+u border none
@@ -228,6 +232,7 @@ assign [class="Trello"] → $ws3
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
+for_window [class="feh"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="Galculator"] floating enable border pixel 1
 for_window [class="GParted"] floating enable border normal
