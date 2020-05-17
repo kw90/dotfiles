@@ -241,7 +241,7 @@ Theme = hringriin_theme
 #
 # Example:    XTermTheme = transparent-background
 #
-#XTermTheme =
+XTermTheme = transparent-background
 
 # Should MOC try to autoload the default lyrics file for an audio?  (The
 # default lyrics file is a text file with the same file name as the audio
@@ -550,6 +550,9 @@ Keymap = keymap
 #ExecCommand8 =
 #ExecCommand9 =
 #ExecCommand10 =
+ExecCommand1 = "mocp --jump 10%"
+ExecCommand5 = "mocp --jump 50%"
+ExecCommand8 = "mocp --jump 80%"
 
 # Display the cursor in the line with the selected file.  Some braille
 # readers (the Handy Tech modular series ZMU 737, for example) use the
