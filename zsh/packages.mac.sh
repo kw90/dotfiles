@@ -5,7 +5,7 @@
 
 echo_info "Installing deps and emojis"
 
-brew install git-flow-avh
+brew install git-flow-avh thefuck
 
 echo_done "Emojis already applied 🚀"
 

@@ -5,6 +5,8 @@
 echo_info "Installing deps"
 
 . ./install_betterlock.sh
+echo_info "Installing i3-gaps-rounded-git can be problematic if there's already i3-gaps installed and is a dependency for a settings manager"
+yaourt -S i3-gaps-rounded-git
 
 curr_wd=$(pwd)
 echo_info "Sym. linking i3 config file from $curr_wd to ~/.config/i3/config"

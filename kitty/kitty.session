@@ -6,7 +6,7 @@ cd ~
 launch zsh
 # Create a window with some environment variables set and run
 # vim in it
-launch env FOO=BAR vim
+launch nvim
 # Set the title for the next window
 title Chat with x
 launch zsh
