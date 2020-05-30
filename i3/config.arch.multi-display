@@ -65,8 +65,8 @@ bindsym $mod+d exec --no-startup-id rofi -show combi -theme slate #solarized-dar
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
-# Lock Screen
-bindsym $mod+Escape exec betterlockscreen -l dim
+# Lock Screen & change wallpaper after each lock
+bindsym $mod+Escape exec betterlockscreen -l dim && betterlockscreen -u ~/Wallpaper --resolution 1920x1200 --blur 0.1 --wall dimblur
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
