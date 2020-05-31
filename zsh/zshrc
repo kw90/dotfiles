@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/kw/.oh-my-zsh"
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -120,7 +120,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-kitty + complete setup zsh | source /dev/stdin
 source $HOME/.aliases
 
 SPACESHIP_VI_MODE_SHOW=false
@@ -147,4 +146,16 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+case "$OSTYPE" in
+	darwin*)
+		echo 'loading mac zshrc'
+		test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+	;;
+	linux*)
+		echo 'loading default linux zshrc'
+		kitty + complete setup zsh | source /dev/stdin
+	;;
+esac
+
+export VIMWIKI_MARKDOWN_EXTENSIONS="extra,toc,wikilinks,meta,admonition,footnotes"
 
