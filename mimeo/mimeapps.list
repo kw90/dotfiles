@@ -1,0 +1,66 @@
+[Default Applications]
+x-scheme-handler/http=userapp-Nightly-WT4OK0.desktop
+x-scheme-handler/https=userapp-Nightly-WT4OK0.desktop
+x-scheme-handler/ftp=userapp-Nightly-WT4OK0.desktop
+x-scheme-handler/chrome=userapp-Nightly-WT4OK0.desktop
+text/html=userapp-Nightly-WT4OK0.desktop
+application/x-extension-htm=userapp-Nightly-WT4OK0.desktop
+application/x-extension-html=userapp-Nightly-WT4OK0.desktop
+application/x-extension-shtml=userapp-Nightly-WT4OK0.desktop
+application/xhtml+xml=userapp-Nightly-WT4OK0.desktop
+application/x-extension-xhtml=userapp-Nightly-WT4OK0.desktop
+application/x-extension-xht=userapp-Nightly-WT4OK0.desktop
+image/jpeg=viewnior.desktop;gpicview.desktop;
+image/png=viewnior.desktop;gpicview.desktop;
+text/plain=mousepad.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-YL9T0Z.desktop
+message/rfc822=userapp-Thunderbird-YL9T0Z.desktop
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
+application/x-bittorrent=deluge.desktop
+x-scheme-handler/news=userapp-Thunderbird-AI2R0Z.desktop
+x-scheme-handler/snews=userapp-Thunderbird-AI2R0Z.desktop
+x-scheme-handler/nntp=userapp-Thunderbird-AI2R0Z.desktop
+x-scheme-handler/feed=userapp-Thunderbird-RJYS0Z.desktop
+application/rss+xml=userapp-Thunderbird-RJYS0Z.desktop
+application/x-extension-rss=userapp-Thunderbird-RJYS0Z.desktop
+application/x-java-archive=userapp-java -jar-PHWOI0.desktop
+x-scheme-handler/msteams=teams.desktop
+
+[Added Associations]
+x-scheme-handler/http=userapp-Pale Moon.desktop;userapp-Nightly-WT4OK0.desktop;
+x-scheme-handler/https=userapp-Pale Moon.desktop;userapp-Nightly-WT4OK0.desktop;
+x-scheme-handler/ftp=userapp-Pale Moon.desktop;userapp-Nightly-WT4OK0.desktop;
+x-scheme-handler/chrome=userapp-Pale Moon.desktop;userapp-Nightly-WT4OK0.desktop;
+text/html=userapp-Pale Moon.desktop;userapp-Nightly-WT4OK0.desktop;
+application/x-extension-htm=userapp-Pale Moon.desktop;userapp-Nightly-WT4OK0.desktop;
+application/x-extension-html=userapp-Pale Moon.desktop;userapp-Nightly-WT4OK0.desktop;
+application/x-extension-shtml=userapp-Pale Moon.desktop;userapp-Nightly-WT4OK0.desktop;
+application/xhtml+xml=userapp-Pale Moon.desktop;userapp-Nightly-WT4OK0.desktop;
+application/x-extension-xhtml=userapp-Pale Moon.desktop;userapp-Nightly-WT4OK0.desktop;
+application/x-extension-xht=userapp-Pale Moon.desktop;userapp-Nightly-WT4OK0.desktop;
+image/jpeg=viewnior.desktop;gpicview.desktop;
+image/png=firefox.desktop;gimp.desktop;viewnior.desktop;gpicview.desktop;
+text/plain=feh.desktop;mousepad.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird.desktop;userapp-Thunderbird-YL9T0Z.desktop;
+message/rfc822=userapp-Thunderbird.desktop;userapp-Thunderbird-YL9T0Z.desktop;
+application/pdf=atril.desktop;org.pwmt.zathura-pdf-mupdf.desktop;firefox.desktop;epdfview.desktop;
+application/x-bittorrent=deluge.desktop;
+inode/directory=exo-file-manager.desktop
+x-scheme-handler/trash=exo-file-manager.desktop
+x-scheme-handler/news=userapp-Thunderbird-AI2R0Z.desktop;
+x-scheme-handler/snews=userapp-Thunderbird-AI2R0Z.desktop;
+x-scheme-handler/nntp=userapp-Thunderbird-AI2R0Z.desktop;
+x-scheme-handler/feed=userapp-Thunderbird-RJYS0Z.desktop;
+application/rss+xml=userapp-Thunderbird-RJYS0Z.desktop;
+application/x-extension-rss=userapp-Thunderbird-RJYS0Z.desktop;
+video/mp4=vlc.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;wine-extension-wri.desktop;atril.desktop;
+text/prs.lines.tag=mousepad.desktop;
+application/x-java-archive=userapp-java -jar-PHWOI0.desktop;userapp-java -jar-KOC8H0.desktop;userapp-java -jar-3SDNI0.desktop;
+application/x-ipynb+json=firefox.desktop;
+application/binary=mousepad.desktop;
+text/xml=firefox.desktop;
+application/x-research-info-systems=mousepad.desktop;
+application/octet-stream=mousepad.desktop;
+
+[Removed Associations]

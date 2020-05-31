@@ -1,32 +1,47 @@
-# Setup `.`-files
+# `.`-Files
 
 Each sub-folder contains configurations for important applications. They can be
 installed separately or combined using installation scripts provided
-`install.sh` in the respective folder scope. This install scripts should install
-all required dependencies, packages and setup symlinks. This is a Arch specific
-setup.
+`install.arch.sh` or `install.debian.sh` in the respective folder scope. These
+install scripts should install all required dependencies, packages and setup
+the symlinks.
 
-# Featured Configurations
-- i3
-- polybar
-- compton
-- (neo)vim
-- kiTTY
-- git
+## Screens
 
-## TODO
+![Monitor 1](./screenshots/Screen1.png)
+![Monitor 2](./screenshots/Screen2.png)
 
-+ __polybar__
- + *top*
-   + move pulseaudio wifi wth vpn battery temperature and date/time to top polybar
+## Featured Installations and Configurations
 
-+ __oh-my-zsh__
-  + add setup and config
-  + Spaceship ZSH
+- **OS**: `Manjaro`/`Arch` Linux (some for `Ubuntu` and `MacOS`)
+- **WM**: `i3`
+- **Bar**: `polybar`
+- **Terminal**: `KiTTY`
+- **Drop down terminal**: `tilda`
+- **Shell**: `zsh`
+- **Editor**: `Neovim`
+- **Terminal font**: Hack
+- **Polybar font**: Hack and Font Awesome
+- **Notification**: `dunst`
+- **Compositor**: `compton-tryone`
+- **Browser**: Firefox Nightly
+- **Music player**: `mocp`
+- **Menu**: `rofi`
+- **PDF**: `zathura`
+- **Version control**: `git`
+- **Lockscreen**: `betterlockscreen`
+- **GTK L&F**
+  - Widget: Matcha-dark-azul
+  - Icons: Papirus-Dark
+  - Cursor: Bibata Ice
+  - Font: Noto Sans 10pt
+- **Default apps association**: `mimeo`
 
-+ __installation__
-  + create remaining easy install scripts
+## Open Points
 
-+ __walls__
-  + create easy 500px pull random image from category script
-
+- Polybar
+  - add wifi, vpn, battery temperature to top polybar
+- Installation
+  - create remaining easy install scripts
+- walls
+  - create easy 500px pull random image from category script

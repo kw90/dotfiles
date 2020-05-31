@@ -158,4 +158,3 @@ case "$OSTYPE" in
 esac
 
 export VIMWIKI_MARKDOWN_EXTENSIONS="extra,toc,wikilinks,meta,admonition,footnotes"
-
