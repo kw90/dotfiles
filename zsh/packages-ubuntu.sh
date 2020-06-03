@@ -5,7 +5,9 @@
 
 echo_info "Installing deps and emojis"
 
-yaourt -S gitflow-avh ttf-twemoji-color
+sudo apt-add-repository ppa:eosrei/fonts
+sudo apt-get update
+sudo apt-get install fonts-twemoji-svginot git-flow
 
 echo_done "Emojis successfully applied 🚀"
 
