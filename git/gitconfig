@@ -1,7 +1,7 @@
 [user]
 	email = kai.waelti@pm.me
 	name = Kai Waelti
-	signingkey = 3176B86DAE63B8CD
+	signingkey = 4B794F4C
 
 [github]
 	user = kw90
@@ -68,3 +68,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[gpg]
+	program = gpg2
