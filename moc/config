@@ -71,7 +71,7 @@ ReadTags = yes
 #
 # Example:    MusicDir = "/home/joe/music"
 #
-MusicDir = "~/Musik"
+MusicDir = "~/Music"
 
 # Start in the music directory by default?  If set to 'no', start
 # in the directory being viewed when the was client last active or,
