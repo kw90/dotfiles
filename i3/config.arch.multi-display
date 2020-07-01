@@ -326,7 +326,7 @@ mode "resize" {
 
 ## Background and Lockscreen
 # exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id feh --randomize --bg-fill ~/mega/Wallpapers/mac_workspaces/1; sleep 1; compton -b
+exec --no-startup-id feh --randomize --bg-fill ~/Wallpaper; sleep 1; compton -b
 bindsym --no-startup-id betterlockscreen --resolution 1920x1200 --blur 0.1 --wall dimblur
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

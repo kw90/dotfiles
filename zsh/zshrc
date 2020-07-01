@@ -158,3 +158,5 @@ case "$OSTYPE" in
 esac
 
 export VIMWIKI_MARKDOWN_EXTENSIONS="extra,toc,wikilinks,meta,admonition,footnotes"
+
+source /opt/miniconda3/etc/profile.d/conda.sh
