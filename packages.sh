@@ -42,6 +42,7 @@ export PKG=(
   xclip
   # zathura-pdf-mupdf
   # zeal
+  the_silver_searcher #ag
 )
 
 export AUR=(
