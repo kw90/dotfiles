@@ -63,6 +63,7 @@
 
 [merge]
 	tool = vimdiff
+	ff = only
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
