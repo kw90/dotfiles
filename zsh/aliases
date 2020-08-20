@@ -5,6 +5,8 @@ alias cat="ccat"
 alias less="cless"
 alias c="clear"
 alias dvresolve="/opt/resolve/bin/resolve"
+alias handbrake="/usr/bin/ghb"
+alias shadow-tech="/opt/shadow-beta/shadow-preprod"
 eval "$(thefuck --alias)"
 export VISUAL=nvim
 
