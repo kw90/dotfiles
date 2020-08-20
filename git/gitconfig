@@ -64,6 +64,8 @@
 
 [merge]
 	tool = vimdiff
+	ff = only
+	submodule = log
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
