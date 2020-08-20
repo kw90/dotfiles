@@ -54,6 +54,7 @@
 
 [diff]
 	tool = vimdiff
+	ff = only
 	submodule = log
 
 [diff "pdf"]
