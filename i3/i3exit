@@ -2,16 +2,16 @@
 
 case "$1" in
     lock)
-        betterlockscreen -l dim
+        setxkbmap -layout us && betterlockscreen -l dim
         ;;
     logout)
-        i3-msg exit
+        setxkbmap -layout us && i3-msg exit
         ;;
     suspend)
-        betterlockscreen -l && systemctl suspend
+        setxkbmap -layout us && betterlockscreen -l && systemctl suspend
         ;;
     hibernate)
-        betterlockscreen -l && systemctl hibernate
+        setxkbmap -layout us && betterlockscreen -l && systemctl hibernate
         ;;
     reboot)
         systemctl reboot
