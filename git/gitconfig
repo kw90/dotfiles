@@ -72,3 +72,5 @@
 
 [gpg]
 	program = gpg
+[submodule]
+	recurse = true
