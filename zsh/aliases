@@ -1,7 +1,7 @@
 # Custom Aliases
 
 alias vim="nvim"
-alias cat="ccat"
+# alias cat="ccat"
 alias less="cless"
 alias c="clear"
 alias dvresolve="/opt/resolve/bin/resolve"
@@ -20,4 +20,8 @@ docker-xauth(){
         xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
 }
 
-
+openclose() {
+    "$@" &
+    disown
+    exit
+}
