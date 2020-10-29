@@ -15,6 +15,7 @@ rm ~/.zshrc
 rm ~/.aliases
 ln -s ~/source/dotfiles/zsh/zshrc ~/.zshrc
 ln -s ~/source/dotfiles/zsh/aliases ~/.aliases
+ln -s ~/source/dotfiles/zsh/dir_colors ~/.dir_colors
 
 . ./packages.sh
 
