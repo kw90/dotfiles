@@ -4,6 +4,8 @@
 
 echo_info "SymLinking polybar config and spells"
 
+yaourt -S polybar
+
 mkdir -p ~/.config/polybar
 
 ln -sfT ~/source/dotfiles/polybar/polybar.conf ~/.config/polybar/polybar.conf

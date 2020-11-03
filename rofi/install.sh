@@ -4,6 +4,8 @@
 
 echo_info "Installing deps"
 
+sudo pacman -S rofi
+
 curr_wd=$(pwd)
 echo_info "Sym. linking rofi config file from $curr_wd to ~/.config/rofi"
 
