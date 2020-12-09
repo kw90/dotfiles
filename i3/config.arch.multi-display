@@ -36,16 +36,18 @@ bindsym $mod+Shift+i  exec manjaro-settings-manager
 bindsym $mod+Shift+b  exec i3-sensible-terminal
 bindsym $mod+Shift+f  exec exo-open --launch FileManager
 bindsym $mod+F1       exec firefox-nightly
-bindsym $mod+F2       exec "protonmail-bridge --no-window & thunderbird"
+bindsym $mod+F2       exec "thunderbird & protonmail-bridge --no-window"
 bindsym $mod+F3       exec pidgin
 # start HTOP
 bindsym $mod+F4       exec tilda --config-file ~/.config/tilda/config_0
 # start MOCP
 bindsym $mod+F5       exec tilda --config-file ~/.config/tilda/config_1
+# start scrcpy
+bindsym $mod+F6       exec scrcpy --shortcut-mod=lctrl
 # start NCPAMixer
-bindsym $mod+Ctrl+m       exec tilda --config-file ~/.config/tilda/config_2
+bindsym $mod+Ctrl+m   exec tilda --config-file ~/.config/tilda/config_2
 bindsym $mod+Ctrl+t   exec compton -b --config ~/.config/compton/compton.conf
-bindsym $mod+Ctrl+x  --release exec --no-startup-id xkill
+bindsym $mod+Ctrl+x   --release exec --no-startup-id xkill
 # start a terminal
 bindsym $mod+Return exec kitty
 
@@ -256,6 +258,7 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+for_window [class="scrcpy"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
