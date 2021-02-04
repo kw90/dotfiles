@@ -461,7 +461,7 @@ bindsym --release $mod+Control+t exec --no-startup-id "transset-df 1"
 
 
 # fullscreen floating window for video
-bindsym $mod+Shift+y exec "transset-df -a 2 -x 2"; fullscreen disable; floating enable; resize set 640 360; sticky enable; move window to position 1270 800
+bindsym $mod+Shift+y fullscreen disable; floating enable; resize set 640 360; sticky enable; move window to position 1270 800
 ## undo that
 bindsym $mod+Shift+z fullscreen disable; floating disable; sticky disable
 
@@ -470,4 +470,5 @@ bindsym $mod+Control+s exec --no-startup-id "flameshot gui"
 ## Change keyboard layout US -> CH
 exec_always --no-startup-id setxkbmap -layout us,ch
 exec_always --no-startup-id setxkbmap -option 'grp:alt_shift_toggle'
+exec_always --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
