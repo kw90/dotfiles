@@ -162,7 +162,8 @@ export VIMWIKI_MARKDOWN_EXTENSIONS="extra,toc,wikilinks,meta,admonition,footnote
 
 source /opt/miniconda3/etc/profile.d/conda.sh
 
-eval "$(pyenv virtualenv-init -)"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="/home/kw/.pyenv"
 
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
