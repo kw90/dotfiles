@@ -7,6 +7,7 @@ alias c="clear"
 alias dvresolve="/opt/resolve/bin/resolve"
 alias handbrake="/usr/bin/ghb"
 alias shadow-tech="/opt/shadow-beta/shadow-preprod"
+alias code=codium
 eval "$(thefuck --alias)"
 export VISUAL=nvim
 
