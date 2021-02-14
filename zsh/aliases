@@ -7,6 +7,10 @@ alias c="clear"
 alias dvresolve="/opt/resolve/bin/resolve"
 alias handbrake="/usr/bin/ghb"
 alias shadow-tech="/opt/shadow-beta/shadow-preprod"
+alias notes="(cd ~/notes; vim .)"
+alias todo="(cd ~/notes; vim todo.txt)"
+alias fix-ntfs="(sudo ntfsfix /dev/sdb1; sudo umount /mnt/data; sudo mount -av)"
+
 eval "$(thefuck --alias)"
 export VISUAL=nvim
 
