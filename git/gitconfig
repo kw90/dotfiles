@@ -24,6 +24,7 @@
 	b = branch
 	co = checkout
 	c = commit
+	cs = commit -S
 	csm = commit -S -m
 	pom = push origin master
 	po = push origin
