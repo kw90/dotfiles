@@ -472,3 +472,6 @@ exec_always --no-startup-id setxkbmap -layout us,ch
 exec_always --no-startup-id setxkbmap -option 'grp:alt_shift_toggle'
 exec_always --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
+exec_always --no-startup-id xrandr --output DP-2 --mode 2560x1440 --rate 240 --primary
+exec_always --no-startup-id xrandr --output DP-1 --mode 1920x1200 --rate 60 --rotate left --left-of DP-2
+exec_always --no-startup-id xrandr --output DVI-D-0 --mode 1920x1200 --rate 60 --right-of DP-2
