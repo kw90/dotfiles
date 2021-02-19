@@ -1,7 +1,7 @@
 #!/bin/bash
 
 INTERVAL=10
-INTERFACES="enp5s0"
+INTERFACES="enp6s0"
 
 declare -A bytes
 
