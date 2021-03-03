@@ -68,7 +68,7 @@ bindsym $mod+d exec --no-startup-id rofi -show combi -theme slate #solarized-dar
 bindsym $mod+z exec --no-startup-id morc_menu
 
 # Lock Screen & change wallpaper after each lock
-bindsym $mod+Escape exec betterlockscreen -l dim && betterlockscreen -u ~/Wallpaper --resolution 1920x1200 --blur 0.1 --wall dimblur
+bindsym $mod+Escape exec betterlockscreen -l dim && feh --randomize --bg-fill ~/Wallpaper
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -483,9 +483,9 @@ bindsym $mod+Shift+z fullscreen disable; floating disable; sticky disable
 bindsym $mod+Control+s exec --no-startup-id "flameshot gui"
 
 ## Change keyboard layout US -> CH
-exec_always --no-startup-id setxkbmap -layout us,ch
-exec_always --no-startup-id setxkbmap -option 'grp:alt_shift_toggle'
-exec_always --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+exec --no-startup-id setxkbmap -layout us,ch
+exec --no-startup-id setxkbmap -option 'grp:alt_shift_toggle'
+exec --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
 # exec_always --no-startup-id xrandr --output DP-2 --mode 2560x1440 --rate 240 --primary --scale 1x1
 # exec_always --no-startup-id xrandr --output DP-1 --mode 1920x1200 --rate 60 --rotate left --left-of DP-2 --scale 1x1
