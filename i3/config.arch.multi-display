@@ -53,8 +53,8 @@ bindsym $mod+Return exec kitty
 
 # start a terminal with tmux
 bindsym $mod+Shift+Return exec kitty -e 'tmux'
-bindsym $mod+Shift+t exec exec kitty --session .config/kitty/kitty.session
-bindsym $mod+Shift+p exec exec kitty +kitten panel --lines 4 --edge bottom htop
+bindsym $mod+Shift+t exec kitty --session .config/kitty/kitty.session
+bindsym $mod+Shift+p exec "kitty +kitten panel --lines 4 --edge bottom htop"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -94,10 +94,10 @@ bindsym $mod+Ctrl+KP_Enter exec --no-startup-id pactl set-sink-mute 1 toggle
 # focus_follows_mouse no
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -106,10 +106,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -123,7 +123,7 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+Tab move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
-bindsym $mod+h split h;exec notify-send 'tile horizontally'
+bindsym $mod+g split h;exec notify-send 'tile horizontally'
 bindsym $mod+v split v;exec notify-send 'tile vertically'
 bindsym $mod+q split toggle
 
@@ -483,9 +483,8 @@ bindsym $mod+Shift+z fullscreen disable; floating disable; sticky disable
 bindsym $mod+Control+s exec --no-startup-id "flameshot gui"
 
 ## Change keyboard layout US -> CH
-exec --no-startup-id setxkbmap -layout us,ch
-exec --no-startup-id setxkbmap -option 'grp:alt_shift_toggle'
-exec --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+exec --no-startup-id "setxkbmap -layout us,ch -option 'grp:alt_shift_toggle'"
+exec --no-startup-id "xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'"
 
 # exec_always --no-startup-id xrandr --output DP-2 --mode 2560x1440 --rate 240 --primary --scale 1x1
 # exec_always --no-startup-id xrandr --output DP-1 --mode 1920x1200 --rate 60 --rotate left --left-of DP-2 --scale 1x1
