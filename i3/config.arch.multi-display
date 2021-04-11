@@ -111,6 +111,12 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
+# move focused window more
+bindsym $mod+Ctrl+Shift+h move left 100 px
+bindsym $mod+Ctrl+Shift+j move down 100 px
+bindsym $mod+Ctrl+Shift+k move up 100
+bindsym $mod+Ctrl+Shift+l move right 100 px
+
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
@@ -341,12 +347,11 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id conky --config ~/.config/conky/.conky.conf
 exec --no-startup-id i3-msg discord
 exec --no-startup-id i3-msg pidgin
 exec --no-startup-id i3-msg spotify
 exec --no-startup-id i3-msg trello
-# exec --no-startup-id start_conky_green
+exec --no-startup-id start_conky
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
@@ -485,6 +490,7 @@ bindsym $mod+Control+s exec --no-startup-id "flameshot gui"
 ## Change keyboard layout US -> CH
 exec --no-startup-id "setxkbmap -layout us,ch -option 'grp:alt_shift_toggle'"
 exec --no-startup-id "xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'"
+
 
 # exec_always --no-startup-id xrandr --output DP-2 --mode 2560x1440 --rate 240 --primary --scale 1x1
 # exec_always --no-startup-id xrandr --output DP-1 --mode 1920x1200 --rate 60 --rotate left --left-of DP-2 --scale 1x1
