@@ -1,0 +1,5 @@
+#!/bin/bash
+
+conky -c /home/kw/.config/conky/conky.conf &&
+
+exit 0
