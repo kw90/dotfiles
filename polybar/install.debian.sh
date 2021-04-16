@@ -11,6 +11,7 @@ ln -sfT ~/source/dotfiles/polybar/launch-polybar.debian.sh ~/.config/polybar/lau
 ln -sfT ~/source/dotfiles/polybar/spotify-artist.sh ~/.config/polybar/spotify-artist.sh
 ln -sfT ~/source/dotfiles/polybar/spotify-track.sh ~/.config/polybar/spotify-track.sh
 ln -sfT ~/source/dotfiles/polybar/spotify-status.py ~/.config/polybar/spotify-status.py
+ln -sfT ~/source/dotfiles/polybar/nettraffic ~/.config/polybar/nettraffic
 
 echo_done "polybar config applied"
 
