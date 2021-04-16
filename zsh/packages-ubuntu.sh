@@ -7,7 +7,7 @@ echo_info "Installing deps and emojis"
 
 sudo apt-add-repository ppa:eosrei/fonts
 sudo apt-get update
-sudo apt-get install fonts-twemoji-svginot git-flow
+sudo apt-get install fonts-twemoji-svginot git-flow zsh
 
 echo_done "Emojis successfully applied 🚀"
 
