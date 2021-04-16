@@ -24,6 +24,7 @@
 	b = branch
 	co = checkout
 	c = commit
+	cs = commit -S
 	csm = commit -S -m
 	pom = push origin master
 	po = push origin
@@ -62,10 +63,16 @@
 	cachetextconv = true
 	textconv = diffpdf
 
+[mergetool "nvim"]
+	cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+
 [merge]
-	tool = vimdiff
-	ff = only
+	tool = nvim
+	# ff = only
 	submodule = log
+
+[mergetool]
+	prompt = false
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f

@@ -10,6 +10,6 @@ curr_wd=$(pwd)
 echo_info "Sym. linking mimeo config file from $curr_wd to ~/.config/"
 
 mkdir -p ~/.config
-ln -sfT ~/source/dotfiles/mimeo/mimeapps.list ~/.config/mimeapps.list
+ln -sfT ~/source/dotfiles/mimeapps/mimeapps.list ~/.config/mimeapps.list
 
 echo_done "mimeo config applied!"
