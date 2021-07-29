@@ -52,9 +52,9 @@ bindsym $mod+Ctrl+x   --release exec --no-startup-id xkill
 bindsym $mod+Return exec kitty
 
 # start a terminal with tmux
-bindsym $mod+Shift+Return exec kitty -e 'tmux'
-bindsym $mod+Shift+t exec kitty --session .config/kitty/kitty.session
-bindsym $mod+Shift+p exec "kitty +kitten panel --lines 4 --edge bottom htop"
+bindsym $mod+Shift+Return exec kitty -e 'tmux attach'
+# bindsym $mod+Shift+t exec kitty --session .config/kitty/kitty.session
+bindsym $mod+Shift+t exec "kitty +kitten panel --lines 16 --edge bottom htop"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -63,12 +63,17 @@ bindsym $mod+Shift+q kill
 # rofi -show combi -bg "#222222" -fg "#2ECC71" -hlbg "#445544" -hlfg "#2EEE71" -bw 4 -eh 1 -font "Roboto Slab 18" -opacity "80" -lines 8 -line-margin 4 -width 100 -padding 160 -terminal kitty
 #bindsym $mod+d exec --no-startup-id dmenu_recency
 bindsym $mod+d exec --no-startup-id rofi -show combi -theme slate #solarized-darker
+bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort -theme slate
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
 # Lock Screen & change wallpaper after each lock
 bindsym $mod+Escape exec betterlockscreen -l dim && feh --randomize --bg-fill ~/Wallpaper
+
+# Launch lpass dmenu nu
+bindsym $mod+shift+p exec --no-startup-id dmenu-lpass-nu
+
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
