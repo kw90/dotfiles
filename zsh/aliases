@@ -1,7 +1,8 @@
+#!/usr/bin/env bash
 # Custom Aliases
 
 alias vim="nvim"
-# alias cat="ccat"
+alias cat="ccat"
 alias less="cless"
 alias c="clear"
 alias dvresolve="/opt/resolve/bin/resolve"
@@ -15,14 +16,14 @@ alias lp="dmenu-lpass-nu"
 eval "$(thefuck --alias)"
 export VISUAL=nvim
 
-docker-xauth(){
-        XSOCK=/tmp/.X11-unix
+docker-xauth() {
+        # XSOCK=/tmp/.X11-unix
         XAUTH=/tmp/.docker.xauth
         if [[ -f "$XAUTH" ]]; then
                 sudo rm -r $XAUTH
         fi
         touch $XAUTH
-        xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
+        xauth nlist "$DISPLAY" | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
 }
 
 openclose() {
@@ -73,5 +74,25 @@ xtract() {
         esac;
     else
         echo "'$1' is not a valid file";
+    fi
+}
+
+free-space() {
+    echo "Cleaning up disk..."
+    read -r "REPLY?Do you want to prune the docker system? [y/N]"
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        docker system prune -f
+    fi
+
+    read -r "REPLY?Do you want to remove all docker volumes? [y/N]"
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        docker volume rm "$(docker volume ls -q)"
+    fi
+    read -r "REPLY?Do you want to remove all docker images? [y/N]"
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        docker image rm "$(docker images -q)"
     fi
 }
