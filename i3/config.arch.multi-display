@@ -52,7 +52,7 @@ bindsym $mod+Ctrl+x   --release exec --no-startup-id xkill
 bindsym $mod+Return exec kitty
 
 # start a terminal with tmux
-bindsym $mod+Shift+Return exec kitty -e 'tmux attach'
+bindsym $mod+Shift+Return exec kitty -e tmux attach
 # bindsym $mod+Shift+t exec kitty --session .config/kitty/kitty.session
 bindsym $mod+Shift+t exec "kitty +kitten panel --lines 16 --edge bottom htop"
 
