@@ -219,14 +219,14 @@ bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 
 # Assign workspaces to output monitors
 workspace 1 output DP-2
-workspace 2 output DP-1
-workspace 3 output DVI-D-0
-workspace 4 output DVI-D-0
+workspace 2 output HDMI-1
+workspace 3 output DP-0
+workspace 4 output DP-0
 workspace 5 output DP-2
-workspace 6 output DVI-D-0
-workspace 7 output DP-1
+workspace 6 output DP-0
+workspace 7 output HDMI-1
 workspace 8 output DP-2
-workspace 9 output DP-1
+workspace 9 output HDMI-1
 
 # Open applications on specific workspaces
 # assign [class="Firefox"] $ws1
