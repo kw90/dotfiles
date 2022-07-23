@@ -52,9 +52,9 @@ bindsym $mod+Ctrl+x   --release exec --no-startup-id xkill
 bindsym $mod+Return exec kitty
 
 # start a terminal with tmux
-bindsym $mod+Shift+Return exec kitty -e tmux attach
+bindsym $mod+Shift+Return exec kitty -e tmux new -As main
 # bindsym $mod+Shift+t exec kitty --session .config/kitty/kitty.session
-bindsym $mod+Shift+t exec "kitty +kitten panel --lines 16 --edge bottom htop"
+# bindsym $mod+Shift+t exec "kitty +kitten panel --lines 16 --edge bottom htop"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -153,7 +153,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # toggle sticky
-bindsym $mod+Shift+s sticky toggle
+bindsym $mod+Shift+t sticky toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -490,12 +490,13 @@ bindsym $mod+Shift+y fullscreen disable; floating enable; resize set 640 360; st
 ## undo that
 bindsym $mod+Shift+z fullscreen disable; floating disable; sticky disable
 
-bindsym $mod+Control+s exec --no-startup-id "flameshot gui"
+bindsym $mod+Shift+s exec --no-startup-id "flameshot gui"
 
 ## Change keyboard layout US -> CH
-exec --no-startup-id "setxkbmap -layout us,ch -option 'grp:alt_shift_toggle'"
+exec --no-startup-id "setxkbmap -layout us,ch -option 'grp:lctrl_lwin_toggle'"
 exec --no-startup-id "xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'"
 
+exec_always --no-startup-id albert
 
 # exec_always --no-startup-id xrandr --output DP-2 --mode 2560x1440 --rate 240 --primary --scale 1x1
 # exec_always --no-startup-id xrandr --output DP-1 --mode 1920x1200 --rate 60 --rotate left --left-of DP-2 --scale 1x1
