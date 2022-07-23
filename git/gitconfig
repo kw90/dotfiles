@@ -67,7 +67,7 @@
 	cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
 
 [merge]
-	tool = nvim
+	tool = meld
 	# ff = only
 	submodule = log
 
