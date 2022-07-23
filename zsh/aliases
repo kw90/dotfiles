@@ -12,6 +12,10 @@ alias notes="(cd ~/notes; vim .)"
 alias todo="(cd ~/notes; vim todo.txt)"
 alias fix-ntfs="(sudo ntfsfix /dev/sdb1; sudo umount /mnt/data; sudo mount -av)"
 alias lp="dmenu-lpass-nu"
+alias jl="conda activate jupyterlab; jupyter lab"
+alias venv="python -m venv venv && source venv/bin/activate"
+alias vpn-ice="sudo openvpn /etc/openvpn/client/is.protonvpn.com.udp.ovpn"
+alias resnap="./source/reSnap/reSnap.sh --source 192.168.1.165 --landscape"
 
 eval "$(thefuck --alias)"
 export VISUAL=nvim
