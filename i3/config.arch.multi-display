@@ -173,16 +173,15 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2: 
-set $ws1   1: Code
-set $ws2   2: Build
-set $ws3   3:🥅 Kanban
-
-set $ws4   4: Compose
-set $ws5   5: Browsing
-set $ws6   6: Messaging
-set $ws7   7:⚡ Tainment
-set $ws8   8: Mail
-set $ws9   9:Reading
+set $ws1   1:💎 Code
+set $ws2   2:🔨 Build
+set $ws3   3:🧭 Kanban
+set $ws4   4:🚀 Compose
+set $ws5   5:🌏 Browsing
+set $ws6   6:🪢 Messaging
+set $ws7   7:🎵 Tainment
+set $ws8   8:📮 Mail
+set $ws9   9:📰 Reading
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -229,23 +228,25 @@ workspace 8 output DP-2
 workspace 9 output HDMI-1
 
 # Open applications on specific workspaces
-# assign [class="Firefox"] $ws1
 assign [class="Pidgin"] → $ws6
 assign [class="Thunderbird"] → $ws8
-# Workaround for spotify, which doesn’t set class hints
-for_window [class="Spotify"] move to workspace $ws7
 assign [class="Spotify"] → $ws7
-# for_window [class="Discord"] move to workspace $ws6
 assign [class="discord"] → $ws6
-# assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
+assign [class="Pcmanfm"] → $ws5
 assign [class="Trello"] → $ws3
+assign [class="Ferdium"] → $ws6
+assign [class="obsidian"] → $ws2
+assign [class="Proton Mail Bridge"] → $ws8
+for_window [title="\[MainBrowser\].*"] move to workspace $ws5
+for_window [title="\[SearchBrowser\].*"] move to workspace $ws3
+for_window [title="\[EntertainBrowser\].*"] move to workspace $ws9
+
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
+for_window [class="Proton Mail Bridge"] floating enable
 for_window [class="feh"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="Galculator"] floating enable border pixel 1
@@ -497,6 +498,13 @@ exec --no-startup-id "setxkbmap -layout us,ch -option 'grp:lctrl_lwin_toggle'"
 exec --no-startup-id "xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'"
 
 exec_always --no-startup-id albert
+
+## Autolaunch Applications on specific workspaces
+exec_always --no-startup-id firefox-nightly
+exec_always --no-startup-id ferdium
+exec_always --no-startup-id obsidian
+exec_always --no-startup-id spotify
+exec_always --no-startup-id "thunderbird & protonmail-bridge --no-window"
 
 # exec_always --no-startup-id xrandr --output DP-2 --mode 2560x1440 --rate 240 --primary --scale 1x1
 # exec_always --no-startup-id xrandr --output DP-1 --mode 1920x1200 --rate 60 --rotate left --left-of DP-2 --scale 1x1
