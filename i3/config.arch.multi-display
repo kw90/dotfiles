@@ -497,14 +497,18 @@ bindsym $mod+Shift+s exec --no-startup-id "flameshot gui"
 exec --no-startup-id "setxkbmap -layout us,ch -option 'grp:lctrl_lwin_toggle'"
 exec --no-startup-id "xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'"
 
-exec_always --no-startup-id albert
+exec i3-msg workspace 3
+exec i3-msg workspace 9
+exec i3-msg workspace 5
 
-## Autolaunch Applications on specific workspaces
+## Autolaunch Applications
+exec_always --no-startup-id albert
 exec_always --no-startup-id firefox-nightly
 exec_always --no-startup-id ferdium
 exec_always --no-startup-id obsidian
 exec_always --no-startup-id spotify
 exec_always --no-startup-id "thunderbird & protonmail-bridge --no-window"
+
 
 # exec_always --no-startup-id xrandr --output DP-2 --mode 2560x1440 --rate 240 --primary --scale 1x1
 # exec_always --no-startup-id xrandr --output DP-1 --mode 1920x1200 --rate 60 --rotate left --left-of DP-2 --scale 1x1
