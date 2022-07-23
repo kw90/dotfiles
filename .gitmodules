@@ -13,3 +13,6 @@
 [submodule "tmux"]
 	path = tmux
 	url = https://github.com/samoshkin/tmux-config.git
+[submodule "doto"]
+	path = lightdm/doto
+	url = https://github.com/declantyson/doto.git
