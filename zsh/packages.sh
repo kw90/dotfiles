@@ -5,7 +5,7 @@
 
 echo_info "Installing deps and emojis"
 
-yaourt -S gitflow-avh ttf-twemoji-color
+yay -S gitflow-avh ttf-twemoji-color
 
 echo_done "Emojis successfully applied 🚀"
 

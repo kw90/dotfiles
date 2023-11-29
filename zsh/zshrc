@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,7 +15,7 @@ export ZSH=~/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -83,6 +90,7 @@ pip
 postgres
 python
 thefuck
+tmux
 #vi-mode
 zsh-navigation-tools
 systemd
@@ -91,6 +99,11 @@ zsh-autosuggestions
 zsh-syntax-highlighting
 poetry
 )
+
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_DEFAULT_SESSION_NAME="main"
+ZSH_TMUX_UNICODE=true
+ZSH_TMUX_CONFIG=~/.tmux.conf
 
 source $ZSH/oh-my-zsh.sh
 
@@ -125,11 +138,6 @@ source $HOME/.aliases
 
 SPACESHIP_VI_MODE_SHOW=false
 
-PATH="/home/kw/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/kw/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/kw/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/kw/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/kw/perl5"; export PERL_MM_OPT;
 # The following lines were added by compinstall
 
 zstyle ':completion:*' auto-description 'Specify: %d'
@@ -153,20 +161,49 @@ case "$OSTYPE" in
 		test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 		export PATH="/usr/local/sbin:$PATH"
 	;;
+	linux-gnu*)
+		echo 'loading default linux zshrc'
+	;;
 	linux*)
 		echo 'loading default linux zshrc'
 		kitty + complete setup zsh | source /dev/stdin
 	;;
 esac
 
-export VIMWIKI_MARKDOWN_EXTENSIONS="extra,toc,wikilinks,meta,admonition,footnotes"
-
-source /opt/miniconda3/etc/profile.d/conda.sh
-
-# export PYENV_ROOT="$HOME/.pyenv"
-# export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init --path)"
-# eval "$(pyenv virtualenv-init -)"
-
-
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
+
+export GPG_TTY=$(tty)
+export LPASS_AGENT_TIMEOUT=0
+export PATH=~/.npm-global/bin:$PATH
+export PATH=/home/kw/.local/bin:$PATH
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+LC_ALL=C.UTF-8
+
+# Start ssh agent
+SSH_ENV="$HOME/.ssh/agent-environment"
+
+function start_agent {
+    echo "Initialising new SSH agent..."
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    echo succeeded
+    chmod 600 "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+    /usr/bin/ssh-add;
+}
+
+# Source SSH settings, if applicable
+if [ -f "${SSH_ENV}" ]; then
+    . "${SSH_ENV}" > /dev/null
+    #ps ${SSH_AGENT_PID} doesn't work under cywgin
+    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        start_agent;
+    }
+else
+    start_agent;
+fi
+
+export GPG_TTY=`tty`

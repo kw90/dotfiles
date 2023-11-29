@@ -1,86 +1,91 @@
 [user]
-	name = Kai Waelti
-	email = kai.waelti@pm.me
-	signingkey = B301549A4B794F4C
+        name = Kai Waelti
+        email = kai.waelti@safe-living.com
+        signingkey = 261C45D8E8848AAC
 
 [github]
-	user = kw90
+        user = kw90
 
 [web]
-	browser = firefox
+        browser = firefox
 
 [core]
-	editor = nvim
-	excludesfile = ~/.config/git/gitignore_global
-	attributesfile = ~/.config/git/gitattributes
+        editor = lvim
+        excludesfile = ~/.config/git/gitignore_global
+        attributesfile = ~/.config/git/gitattributes
 
 [commit]
-	verbose = true
-	gpgsign = true
-	template = ~/.config/git/git-commit-message-template
+        verbose = true
+        gpgsign = true
+        template = ~/.config/git/git-commit-message-template
 
 [alias]
-	a = add
-	b = branch
-	co = checkout
-	c = commit
-	cs = commit -S
-	csm = commit -S -m
-	pom = push origin master
-	po = push origin
-	cl = clone
-	p = push
-	l = pull
-	plom = pull origin master
-	rb = rebase
-	st = status
-	conflicts = diff --name-only --diff-filter=U
+        a = add
+        b = branch
+        co = checkout
+        c = commit
+        cs = commit -S
+        csm = commit -S -m
+        pom = push origin master
+        po = push origin
+        cl = clone
+        p = push
+        pl = pull
+        plo = pull origin
+        plom = pull origin master
+        rb = rebase
+        st = status
+        conflicts = diff --name-only --diff-filter=U
+        lol = log --graph --decorate --pretty='format:%C(auto)%h %d %s %C(green)%an%C(bold blue) %ad' --abbrev-commit --date=relative
+        lola = log --graph --decorate --pretty='format:%C(auto)%h %d %s %C(green)%an%C(bold blue) %ad' --abbrev-commit --all --date=relative
+        su = submodule update --init --recursive
 
 [color]
-	ui = true
+        ui = true
 
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+        oldNormal = red bold
+        oldHighlight = red bold 52
+        newNormal = green bold
+        newHighlight = green bold 22
 
 [color "diff"]
-	meta = yellow
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+        meta = yellow
+        frag = magenta bold
+        commit = yellow bold
+        old = red bold
+        new = green bold
+        whitespace = red reverse
 
 [diff]
-	tool = vimdiff
-	ff = only
-	submodule = log
+        tool = vimdiff
+        ff = only
+        submodule = log
 
 [diff "pdf"]
-	binary = true
-	cachetextconv = true
-	textconv = diffpdf
+        binary = true
+        cachetextconv = true
+        textconv = diffpdf
 
-[mergetool "nvim"]
-	cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+[mergetool "vi"]
+        cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
 
 [merge]
-	tool = meld
-	# ff = only
-	submodule = log
+        tool = lvim
+        # ff = only
+        submodule = log
 
 [mergetool]
-	prompt = false
+        prompt = false
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+        required = true
 
 [gpg]
 	program = gpg
+
 [submodule]
 	recurse = true
