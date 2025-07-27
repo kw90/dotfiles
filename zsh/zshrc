@@ -79,7 +79,6 @@ emoji
 emoji-clock
 docker
 docker-compose
-docker-machine
 extract
 ng
 nmap
@@ -91,21 +90,24 @@ postgres
 python
 thefuck
 tmux
-#vi-mode
+zsh-vi-mode
 zsh-navigation-tools
 systemd
 web-search
 zsh-autosuggestions
 zsh-syntax-highlighting
 poetry
+ssh-agent
 )
 
-ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART=false
 ZSH_TMUX_DEFAULT_SESSION_NAME="main"
 ZSH_TMUX_UNICODE=true
-ZSH_TMUX_CONFIG=~/.tmux.conf
+ZSH_TMUX_CONFIG=~/.config/tmux/tmux.conf
 
 source $ZSH/oh-my-zsh.sh
+
+bindkey '^r' history-incremental-search-backward
 
 #export SPACESHIP_TIME_SHOW="true"
 
@@ -135,8 +137,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source $HOME/.aliases
-
-SPACESHIP_VI_MODE_SHOW=false
+source $HOME/.secrets
+source $HOME/.keys
 
 # The following lines were added by compinstall
 
@@ -151,8 +153,8 @@ zstyle ':completion:*' menu select=0
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle :compinstall filename '/home/kw/.zshrc'
 
-autoload -Uz compinit
-compinit
+fpath+=~/.zfunc
+autoload -Uz compinit && compinit
 # End of lines added by compinstall
 
 case "$OSTYPE" in
@@ -172,8 +174,9 @@ esac
 
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 
-export GPG_TTY=$(tty)
-export LPASS_AGENT_TIMEOUT=0
+source /opt/homebrew/Cellar/fzf/0.55.0/shell/key-bindings.zsh
+source /opt/homebrew/Cellar/fzf/0.55.0/shell/completion.zsh
+
 export PATH=~/.npm-global/bin:$PATH
 export PATH=/home/kw/.local/bin:$PATH
 
@@ -181,6 +184,7 @@ export PATH=/home/kw/.local/bin:$PATH
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=3
 LC_ALL=C.UTF-8
 
 # Start ssh agent
@@ -206,4 +210,28 @@ else
     start_agent;
 fi
 
-export GPG_TTY=`tty`
+export PATH=~/.local/bin:$PATH
+if command -v zoxide > /dev/null; then
+  eval "$(zoxide init zsh)"
+fi
+prompt_context() { }
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Source the Lazyman shell initialization for aliases and nvims selector
+# shellcheck source=.config/nvim-Lazyman/.lazymanrc
+# [ -f ~/.config/nvim-Lazyman/.lazymanrc ] && source ~/.config/nvim-Lazyman/.lazymanrc
+# Source the Lazyman .nvimsbind for nvims key binding
+# shellcheck source=.config/nvim-Lazyman/.nvimsbind
+# [ -f ~/.config/nvim-Lazyman/.nvimsbind ] && source ~/.config/nvim-Lazyman/.nvimsbind
+
+# Add more completions
+source <(kubectl completion zsh)
+source <(k9s completion zsh)
+export GPG_TTY=$(tty)
