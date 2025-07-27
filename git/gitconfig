@@ -1,7 +1,7 @@
 [user]
         name = Kai Waelti
-        email = kai.waelti@safe-living.com
-        signingkey = 261C45D8E8848AAC
+        email = hi@kaiwaelti.me
+        signingkey = BEEEE314AA579CBD
 
 [github]
         user = kw90
@@ -10,7 +10,7 @@
         browser = firefox
 
 [core]
-        editor = lvim
+        editor = nvim
         excludesfile = ~/.config/git/gitignore_global
         attributesfile = ~/.config/git/gitattributes
 
@@ -71,18 +71,12 @@
         cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
 
 [merge]
-        tool = lvim
+        tool = nvim
         # ff = only
         submodule = log
 
 [mergetool]
         prompt = false
-
-[filter "lfs"]
-        clean = git-lfs clean -- %f
-        smudge = git-lfs smudge -- %f
-        process = git-lfs filter-process
-        required = true
 
 [gpg]
 	program = gpg
